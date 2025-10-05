@@ -51,36 +51,23 @@ print(firstnonrepeatingchar("swiss"))
 
 
 def first_non_repeating_char(s):
-    # Step 1: build frequency map
-    char_count = {}
-    for ch in s:
-        char_count[ch] = char_count.get(ch, 0) + 1
+    char_count = {}     # Step 1: Create an empty dictionary to hold counts
+    for ch in s:        # Step 2: Loop over every character in the string   in the same order they appear
+        char_count[ch] = char_count.get(ch, 0) + 1  # Step 3: Update counts 
+    return None # Step 4: Find the first non-repeating character                                        
+print(first_non_repeating_char("ishwarya"))
+#Armstrong number
+def armstrong(n):
+    order=len(str(n))
+    sum=0
+    temp=n
+    while temp>0:
+        digit=temp%10
+        sum+=digit**order
+        temp//=10
+    return sum==n
+print(armstrong(153))
 
-    # Step 2: find first char with freq 1
-    for ch in s:
-        if char_count[ch] == 1:
-            return ch
-
-    # Step 3: nothing found
-    return None
-print(first_non_repeating_char("swiss"))
-"""Detailed explanation of each line / step
-
-char_count = {}
-
-Create an empty dictionary to hold counts. Keys = characters, values = counts.
-
-for ch in s:
-
-Loop over every character in the string in the same order they appear.
-
-char_count[ch] = char_count.get(ch, 0) + 1
-
-char_count.get(ch, 0) returns the current count if ch exists, otherwise 0.
-
-Add 1 and store back into the dictionary.
-
-After the full first loop, char_count holds frequency of every character."""
         
     
 
