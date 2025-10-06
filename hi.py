@@ -67,7 +67,20 @@ def armstrong(n):
         temp//=10
     return sum==n
 print(armstrong(153))
+#Fibonacci series
+def fibonacci(n):
+    fib_series=[0,1]
+    while len(fib_series)<n:
+        next_fib=fib_series[-1]+fib_series[-2]
+        fib_series.append(next_fib)
+    return fib_series
 
-        
-    
-
+print(fibonacci(10))
+def fibonacci(n):
+    a,b=0,1
+    fib_series=[]
+    for _ in range(n):
+        fib_series.append(a)
+        a,b=b,a+b
+    return fib_series
+print(fibonacci(10))
