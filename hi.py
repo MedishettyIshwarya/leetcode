@@ -84,3 +84,12 @@ def fibonacci(n):
         a,b=b,a+b
     return fib_series
 print(fibonacci(10))
+#Prime number
+def is_prime(n):
+    if n%2==0 and n>2:
+        return False
+    for i in range(3,int(n**0.5)+1,2):
+        if n%i==0:
+            return False        
+    return True
+print(is_prime(29))
